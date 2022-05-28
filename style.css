@@ -1,0 +1,119 @@
+body {
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+header {
+  width:60%;
+  height:10%;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  border:3px solid #BC5F6A;
+  border-radius:20px;
+}
+section {
+  width:60%;
+  min-height:70%;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  flex-direction:column;
+  border:5px solid #19B3B1;
+  border-radius:20px;
+  background-color: white;
+}
+h3 {
+  color:#034B61;
+}
+svg {
+  margin-right:10px;
+}
+ul {
+  margin:0;
+  padding:0;
+}
+li {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+.container {
+  width:900px;
+  height:850px;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items: center;
+  background-color:#034B61;
+  box-shadow: 1px 5px 15px black;
+}
+.iconify--carbon {
+  margin-right:25px;
+  color:#E3A6A1;
+}
+.title {
+  text-align:center;
+  color:white;
+}
+.newtask {
+  width:100%;
+  height:10%;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  border-bottom:5px solid #E3A6A1;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 5px 15px black;
+  background-color: #E3A6A1;
+}
+#newtask--input {
+  width:70%;
+  height:50%;
+  outline:none;
+  border-radius: 10px 0 0 10px;
+  border:none;
+  margin:0;
+  padding:0;
+  text-align:center;
+  color:#034B61;
+}
+#newtask--button {
+  width:20%;
+  height:50%;
+  border-radius: 0 10px 10px 0;
+  border:none;
+  margin:0;
+  padding:0;
+  transition:all 500ms ease;
+  font-weight: bold;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+#newtask--button:hover {
+  cursor: pointer;
+  background-color: #034B61;
+  color: #E3A6A1;
+}
+#todo {
+  width:90%;
+  font-size:22px;
+  font-weight:bold;
+  border:1px solid red;
+}
+#complete {
+  width:90%;
+  font-size:22px;
+  font-weight:bold;
+  border:1px solid green;
+}
+
+.delete--task {
+  width:20%;
+  height:90%;
+}
