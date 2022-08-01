@@ -1,33 +1,54 @@
-/**
- * Get element from the HTML file
- */
-const todo = document.getElementById("todo");
-const button = document.getElementById("newtask--button");
+const add = document.getElementById("newtask__button");
 
 
-/**
- * Listen events
- */
-button.addEventListener("click", addTask);
-
-
-/**
- * addTask()
- * taskList = Create a new element in todo list,
- * input = Value of text enter by user,
- * text = Use the value of input,
- * Then, we add value of text in the taskList
- */
-function addTask(event) {
-  event.preventDefault();
-  const taskList = document.createElement("li");
-  taskList.classList.add("todo__task")
-  const del = document.createElement("button");
-  del.classList.add("delete__task");
-  const input = document.getElementById("newtask--input").value;
-  const text = document.createTextNode(input);
-  taskList.appendChild(text) + taskList.appendChild(del);
-  todo.appendChild(taskList);
+const eltList = document.getElementsByTagName("li");
+let i;
+for(i = 0; i < eltList.length ; i++) {
+  const crossBox = document.createElement("span");
+  const cross = document.createTextNode("\u00D7");
+  crossBox.className = "delete";
+  crossBox.appendChild(cross);
+  eltList[i].appendChild(crossBox);
 }
+const deleteBtn = document.getElementsByClassName("delete");
+for(i = 0; i < deleteBtn.length; i++) {
+  deleteBtn[i].onclick = function() {
+    const bloc = this.parentElement;
+    bloc.style.display = "none";
+  }
+}
+
+
+function newElement() {
+  const newElt = document.createElement("li");
+  newElt.classList.add("todo__item");
+  const inputElt = document.getElementById("newtask__input").value;
+  const textElt = document.createTextNode(inputElt);
+  newElt.appendChild(textElt);
+  const listElt = document.getElementById("todo");
+
+  if(inputElt === '') {
+    alert("Please, write something to do !")
+  }else {
+    listElt.appendChild(newElt);
+  }
+
+  const crossBox = document.createElement("span");
+  const cross = document.createTextNode("\u00D7");
+  crossBox.className = "delete";
+  crossBox.appendChild(cross);
+  newElt.appendChild(crossBox);
+
+  for(i = 0; i < deleteBtn.length; i++) {
+    deleteBtn[i].onclick = function() {
+      const bloc = this.parentElement;
+      bloc.style.display = "none";
+    }
+  }
+}
+
+
+
+
 
 

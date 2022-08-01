@@ -1,34 +1,36 @@
-body {
-  margin:0;
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
   padding:0;
+  margin:0;
+  letter-spacing: 1px;
+}
+body {
+  width:100%;
+  height:100vh;
   display:flex;
   flex-direction:column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'League Spartan', sans-serif;
+  background: linear-gradient(to bottom right, #00c59a, #00b7ff);
+  background-repeat: no-repeat;
 }
 header {
-  width:60%;
-  height:10%;
+  width:100%;
+  height:auto;
   display:flex;
   align-items:center;
   justify-content: center;
-  border:3px solid #BC5F6A;
-  border-radius:20px;
+  text-align:center;
 }
 section {
-  width:60%;
-  min-height:70%;
+  width:100%;
+  height:auto;
   display:flex;
   align-items:center;
-  justify-content: space-between;
   flex-direction:column;
-  border:5px solid #19B3B1;
-  border-radius:20px;
-  background-color: white;
-}
-h3 {
-  color:#034B61;
 }
 svg {
   margin-right:10px;
@@ -43,77 +45,137 @@ li {
   padding:0;
 }
 .container {
-  width:900px;
-  height:850px;
+  min-width:900px;
+  height:100%;
   display:flex;
   flex-direction:column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  background-color:#034B61;
-  box-shadow: 1px 5px 15px black;
+  background:#131325;
 }
 .iconify--carbon {
   margin-right:25px;
-  color:#E3A6A1;
+  color:#00c59a;
 }
 .title {
   text-align:center;
   color:white;
+  font-size:40px;
+  font-weight:600;
+  margin:50px 0 50px 0;
 }
 .newtask {
-  width:100%;
-  height:10%;
+  width:95%;
+  height:100px;
   display:flex;
   align-items:center;
-  justify-content: center;
-  border-bottom:5px solid #E3A6A1;
-  border-radius: 15px 15px 0 0;
-  box-shadow: 0 5px 15px black;
-  background-color: #E3A6A1;
+  justify-content: space-around;
+  position:relative;
 }
-#newtask--input {
-  width:70%;
-  height:50%;
+#newtask__input {
+  width:88%;
+  height:50px;
+  margin:0;
+  padding:0 0 0 30px;
+  border:none;
+  border-radius:10px;
   outline:none;
-  border-radius: 10px 0 0 10px;
-  border:none;
-  margin:0;
-  padding:0;
-  text-align:center;
-  color:#034B61;
+  background: #131325;
+  border:2px solid white;
+  color:white;
+  font-size:20px;
+  font-weight: 300;
 }
-#newtask--button {
-  width:20%;
+label {
+  position:absolute;
+  left:40px;
+  top:37.5px;
+  transition: all 300ms ease;
+  background:transparent;
+  padding:5px;
+  border-radius:5px;
+  font-size:20px;
+  font-weight:400;
+  color:white;
+}
+#newtask__input:focus ~ label {
+  top:12.5px;
+  font-size:14px;
+  background:#131325;
+  color:white;
+}
+#newtask__input:focus {
+  border:3px solid #00b7ff;
+}
+#newtask__input:not(:focus) {
+  color:transparent;
+}
+#newtask__button {
+  width:7%;
   height:50%;
-  border-radius: 0 10px 10px 0;
   border:none;
+  border-radius:10px;
   margin:0;
   padding:0;
-  transition:all 500ms ease;
-  font-weight: bold;
+  transition:all 300ms ease;
+  letter-spacing: 2px;
+  font-size:20px;
   display:flex;
   align-items:center;
   justify-content: center;
+  background:#00c59a;
+  color:#F1f1f1;
 }
-#newtask--button:hover {
+#newtask__button svg {
+  color:white;
+  width:30px;
+  height:30px;
+  padding:0;
+  margin:0;
+}
+#newtask__button:hover {
   cursor: pointer;
-  background-color: #034B61;
-  color: #E3A6A1;
+  background: #00c59a7a;
 }
 #todo {
-  width:90%;
-  font-size:22px;
-  font-weight:bold;
-  border:1px solid red;
+  width:95%;
+  height:auto;
+  font-size:20px;
+  font-weight:300;
 }
-#complete {
-  width:90%;
-  font-size:22px;
-  font-weight:bold;
-  border:1px solid green;
+.todo__item {
+  position:relative;
+  height:50px;
+  width:100%;
+  padding-left:20px;
+  display:flex;
+  align-items: center;
+  color:#F1f1f1;
+}
+.todo__item:nth-child(even) {
+  background:#232343;
+}
+.delete {
+  position:absolute;
+  right:0;
+  top:0;
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all 300ms ease;
+}
+span.delete {
+  font-size:30px;
+}
+.delete:hover {
+  background:#F1f1f1;
+  color:#131325;
+  cursor:pointer;
 }
 
-.delete--task {
-  width:20%;
-  height:90%;
-}
+
+
+
+
